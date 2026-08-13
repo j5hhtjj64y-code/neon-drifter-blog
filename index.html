@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON DRIFTER // 赛博日志</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 扫描线效果 -->
+    <div class="scanlines"></div>
+    
+    <!-- 粒子背景 -->
+    <canvas id="particles"></canvas>
+
+    <!-- 导航 -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="glitch" data-text="NEON DRIFTER">NEON DRIFTER</span>
+            <span class="status-indicator"></span>
+        </div>
+        <button class="nav-toggle" onclick="toggleMenu()">≡</button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link">[首页]</a></li>
+            <li><a href="#posts" class="nav-link">[日志]</a></li>
+            <li><a href="#gallery" class="nav-link">[视像]</a></li>
+            <li><a href="#about" class="nav-link">[身份]</a></li>
+            <li><a href="#donate" class="nav-link nav-donate">[投喂]</a></li>
+        </ul>
+    </nav>
+
+    <!-- 首页 Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">// SYSTEM.ONLINE</div>
+            <h1 class="hero-title glitch" data-text="欢迎来到霓虹废土">
+                欢迎来到霓虹废土
+            </h1>
+            <p class="hero-subtitle">
+                在这里记录数字时代的碎片、街头摄影与赛博梦境
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num" data-target="127">0</span>
+                    <span class="stat-label">篇日志</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="2048">0</span>
+                    <span class="stat-label">张照片</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="512">0</span>
+                    <span class="stat-label">段影像</span>
+                </div>
+            </div>
+            <a href="#posts" class="btn btn-primary">
+                <span class="btn-text">进入矩阵 ↓</span>
+            </a>
+        </div>
+        <div class="hero-grid"></div>
+    </section>
+
+    <!-- 最新日志 -->
+    <section id="posts" class="posts-section">
+        <div class="section-header">
+            <span class="section-tag">// DATA_STREAM</span>
+            <h2 class="section-title glitch" data-text="最新日志">最新日志</h2>
+        </div>
+        
+        <div class="posts-grid">
+            <!-- 文章卡片 1 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <div class="post-placeholder" style="background: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 50%, #0d1b2a 100%);">
+                        <span class="placeholder-icon">📷</span>
+                        <span class="placeholder-text">点击添加照片</span>
+                    </div>
+                    <div class="post-overlay">
+                        <span class="post-date">2087.06.15</span>
+                        <span class="post-category">摄影</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">雨夜霓虹：东京第三区的光污染报告</h3>
+                    <p class="post-excerpt">
+                        酸性雨水打在增强现实眼镜上，街道被粉色和青色的全息广告淹没。这是我在地下三层拍到的画面...
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-views">👁 1,337 次浏览</span>
+                        <a href="#" class="post-readmore">读取更多 →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 2 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <div class="post-placeholder" style="background: linear-gradient(135deg, #1a0a2e 0%, #2d0a31 50%, #0d1b2a 100%);">
+                        <span class="placeholder-icon">🎬</span>
+                        <span class="placeholder-text">点击添加视频</span>
+                    </div>
+                    <div class="post-overlay">
+                        <span class="post-date">2087.06.12</span>
+                        <span class="post-category">影像</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">[VLOG] 潜入废弃服务器农场</h3>
+                    <p class="post-excerpt">
+                        带着老式胶片相机和一台改装过的无人机，我们潜入了北郊那座被遗弃的数据中心。冷却液的味道...
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-views">👁 2,048 次浏览</span>
+                        <a href="#" class="post-readmore">读取更多 →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 3 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <div class="post-placeholder" style="background: linear-gradient(135deg, #0d1b2a 0%, #1a1a2e 50%, #16213e 100%);">
+                        <span class="placeholder-icon">📝</span>
+                        <span class="placeholder-text">点击添加照片</span>
+                    </div>
+                    <div class="post-overlay">
+                        <span class="post-date">2087.06.08</span>
+                        <span class="post-category">随笔</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">论赛博空间中孤独的算法</h3>
+                    <p class="post-excerpt">
+                        当一个AI开始写诗，它是在模仿人类，还是在创造一种全新的表达形式？这个问题困扰了我整个周末...
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-views">👁 892 次浏览</span>
+                        <a href="#" class="post-readmore">读取更多 →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 4 -->
+            <article class="post-card">
+                <div class="post-image">
+                    <div class="post-placeholder" style="background: linear-gradient(135deg, #16213e 0%, #0f3460 50%, #1a0a2e 100%);">
+                        <span class="placeholder-icon">🎮</span>
+                        <span class="placeholder-text">点击添加照片</span>
+                    </div>
+                    <div class="post-overlay">
+                        <span class="post-date">2087.06.01</span>
+                        <span class="post-category">评测</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">神经接口游戏体验：痛觉模拟器 v4.2</h3>
+                    <p class="post-excerpt">
+                        第一次直连大脑皮层玩游戏。说实话，被虚拟子弹击中的感觉比我想象的疼多了。以下是完整测评...
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-views">👁 3,421 次浏览</span>
+                        <a href="#" class="post-readmore">读取更多 →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 视像展示 -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <span class="section-tag">// VISUAL_ARCHIVE</span>
+            <h2 class="section-title glitch" data-text="视像档案">视像档案</h2>
+        </div>
+
+        <div class="gallery-tabs">
+            <button class="tab-btn active" onclick="switchTab('photos')">📷 照片</button>
+            <button class="tab-btn" onclick="switchTab('videos')">🎬 视频</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryPhotos">
+            <div class="gallery-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0a0a0f, #1a0a2e);">
+                    <span>🌃</span>
+                    <p>替换为你的照片</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1a0a2e, #2d0a31);">
+                    <span>🌆</span>
+                    <p>替换为你的照片</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0d1b2a, #16213e);">
+                    <span>🌌</span>
+                    <p>替换为你的照片</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #16213e, #0f3460);">
+                    <span>🏙️</span>
+                    <p>替换为你的照片</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1a1a2e, #0a0a0f);">
+                    <span>🎭</span>
+                    <p>替换为你的照片</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0f3460, #1a0a2e);">
+                    <span>⚡</span>
+                    <p>替换为你的照片</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-grid hidden" id="galleryVideos">
+            <div class="gallery-item video-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0a0a0f, #1a0a2e);">
+                    <span class="play-icon">▶</span>
+                    <p>替换为你的视频</p>
+                </div>
+            </div>
+            <div class="gallery-item video-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1a0a2e, #2d0a31);">
+                    <span class="play-icon">▶</span>
+                    <p>替换为你的视频</p>
+                </div>
+            </div>
+            <div class="gallery-item video-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0d1b2a, #16213e);">
+                    <span class="play-icon">▶</span>
+                    <p>替换为你的视频</p>
+                </div>
+            </div>
+            <div class="gallery-item video-item">
+                <div class="gallery-placeholder" style="background: linear-gradient(135deg, #16213e, #0f3460);">
+                    <span class="play-icon">▶</span>
+                    <p>替换为你的视频</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <span class="section-tag">// USER_PROFILE</span>
+            <h2 class="section-title glitch" data-text="身份档案">身份档案</h2>
+        </div>
+
+        <div class="about-card">
+            <div class="about-avatar">
+                <div class="avatar-ring"></div>
+                <div class="avatar-placeholder">
+                    <span>👤</span>
+                    <p>替换头像</p>
+                </div>
+            </div>
+            <div class="about-info">
+                <h3 class="about-name">霓虹游侠_2077</h3>
+                <p class="about-role">[ 街头摄影师 / 赛博朋克文化研究者 / 数字游民 ]</p>
+                <p class="about-bio">
+                    在高度数字化的世界里寻找真实的人性和光影。我用相机记录被霓虹灯照亮的街头，
+                    用文字描述被算法塑造的情感。相信技术应该服务于人类的诗意，而不是相反。
+                </p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <span class="about-stat-value">2087</span>
+                        <span class="about-stat-label">入网年份</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">东亚</span>
+                        <span class="about-stat-label">信号区域</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">在线</span>
+                        <span class="about-stat-label">系统状态</span>
+                    </div>
+                </div>
+                <div class="about-social">
+                    <a href="#" class="social-link">📧 邮件</a>
+                    <a href="#" class="social-link">🐦 Twitter</a>
+                    <a href="#" class="social-link">📷 Instagram</a>
+                    <a href="#" class="social-link">💬 微信</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 打赏区域 -->
+    <section id="donate" class="donate-section">
+        <div class="section-header">
+            <span class="section-tag">// SUPPORT_PROTOCOL</span>
+            <h2 class="section-title glitch" data-text="投喂通道">投喂通道</h2>
+        </div>
+
+        <div class="donate-container">
+            <p class="donate-desc">
+                喜欢我的内容？请投喂能量块，助我继续游荡在赛博空间 🍜
+            </p>
+
+            <div class="donate-options">
+                <div class="donate-card" onclick="selectAmount(10)">
+                    <div class="donate-amount">¥10</div>
+                    <div class="donate-label">能量棒</div>
+                    <div class="donate-desc-small">一杯咖啡的感谢</div>
+                </div>
+                <div class="donate-card featured" onclick="selectAmount(50)">
+                    <div class="donate-badge">推荐</div>
+                    <div class="donate-amount">¥50</div>
+                    <div class="donate-label">能量包</div>
+                    <div class="donate-desc-small">一顿拉面的支持</div>
+                </div>
+                <div class="donate-card" onclick="selectAmount(100)">
+                    <div class="donate-amount">¥100</div>
+                    <div class="donate-label">能量舱</div>
+                    <div class="donate-desc-small">一晚旅馆的鼓励</div>
+                </div>
+                <div class="donate-card" onclick="selectAmount(200)">
+                    <div class="donate-amount">¥200</div>
+                    <div class="donate-label">能量核心</div>
+                    <div class="donate-desc-small">一次冒险的赞助</div>
+                </div>
+            </div>
+
+            <!-- 自定义金额 -->
+            <div class="donate-custom">
+                <label>自定义金额：</label>
+                <div class="custom-input-wrap">
+                    <span class="custom-prefix">¥</span>
+                    <input type="number" id="customAmount" placeholder="输入金额" min="1">
+                    <button class="btn btn-primary" onclick="donateCustom()">投喂</button>
+                </div>
+            </div>
+
+            <!-- 支付方式选择 -->
+            <div class="payment-section" id="paymentSection" style="display: none;">
+                <h4 class="payment-title">选择支付方式</h4>
+                <div class="payment-methods">
+                    <div class="payment-method" onclick="showQR('wechat')">
+                        <div class="payment-icon">💚</div>
+                        <span>微信支付</span>
+                    </div>
+                    <div class="payment-method" onclick="showQR('alipay')">
+                        <div class="payment-icon">💙</div>
+                        <span>支付宝</span>
+                    </div>
+                </div>
+
+                <!-- 二维码展示区 -->
+                <div class="qr-display" id="qrDisplay" style="display: none;">
+                    <p class="qr-hint">请打开对应 APP 扫码投喂</p>
+                    <div class="qr-placeholder" id="qrPlaceholder">
+                        <span>📱</span>
+                        <p>替换为你的收款二维码</p>
+                    </div>
+                    <p class="qr-amount" id="qrAmount">金额：¥50</p>
+                    <button class="btn btn-secondary" onclick="closePayment()">关闭</button>
+                </div>
+            </div>
+
+            <!-- 投喂记录 -->
+            <div class="donate-history">
+                <h4 class="history-title">// 最近投喂记录</h4>
+                <div class="history-list">
+                    <div class="history-item">
+                        <span class="history-user">匿名用户_9527</span>
+                        <span class="history-amount">¥50</span>
+                        <span class="history-msg">「内容很棒，继续加油」</span>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-user">赛博猫咪</span>
+                        <span class="history-amount">¥10</span>
+                        <span class="history-msg">「喜欢你的摄影风格」</span>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-user">NEON_WALKER</span>
+                        <span class="history-amount">¥100</span>
+                        <span class="history-msg">「期待更多视频」</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="glitch" data-text="NEON DRIFTER">NEON DRIFTER</span>
+            </div>
+            <p class="footer-copy">
+                © 2087 NEON DRIFTER. ALL RIGHTS RESERVED.<br>
+                <span class="footer-sub">在赛博空间里，没有人知道你是一条狗</span>
+            </p>
+            <div class="footer-links">
+                <a href="#">隐私协议</a>
+                <a href="#">使用条款</a>
+                <a href="#">联系站长</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 光标跟随效果 -->
+    <div class="cursor-glow"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
