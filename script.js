@@ -261,19 +261,29 @@ function donateCustom() {
 
 function showQR(method) {
     const qrDisplay = document.getElementById('qrDisplay');
-    const qrPlaceholder = document.getElementById('qrPlaceholder');
+    const qrImage = document.getElementById('qrImage');
+    const qrFallback = document.getElementById('qrFallback');
     const qrAmount = document.getElementById('qrAmount');
     
     qrDisplay.style.display = 'block';
     qrAmount.textContent = `金额：¥${selectedAmount}`;
     
-    // 更新二维码占位符样式
-    if (method === 'wechat') {
-        qrPlaceholder.style.borderColor = '#07C160';
-        qrPlaceholder.innerHTML = '<span style="font-size: 3rem;">💚</span><p style="color: #07C160;">微信收款码</p>';
+    // 这里设置你的真实收款二维码图片链接
+    // 示例：const wechatQR = "https://你的图床/微信收款码.png";
+    //       const alipayQR = "https://你的图床/支付宝收款码.png";
+    
+    const wechatQR = ""; // ← 替换为你的微信收款码图片链接
+    const alipayQR = ""; // ← 替换为你的支付宝收款码图片链接
+    
+    const qrUrl = method === 'wechat' ? wechatQR : alipayQR;
+    
+    if (qrUrl) {
+        qrImage.src = qrUrl;
+        qrImage.style.display = 'block';
+        qrFallback.style.display = 'none';
     } else {
-        qrPlaceholder.style.borderColor = '#1677FF';
-        qrPlaceholder.innerHTML = '<span style="font-size: 3rem;">💙</span><p style="color: #1677FF;">支付宝收款码</p>';
+        qrImage.style.display = 'none';
+        qrFallback.style.display = 'flex';
     }
     
     qrDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
